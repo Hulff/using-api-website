@@ -5,7 +5,14 @@ const payloadAltitude = document.getElementById("10")
 const payloadCo2 = document.getElementById("11")
 const payloadVoc = document.getElementById("12")
 const input = document.getElementById("input")
-let id 
+const temp = document.getElementById("4")
+const press = document.getElementById("5") 
+const battery = document.getElementById("6")
+const alt = document.getElementById("7")
+const voc = document.getElementById("8")
+const co2 = document.getElementById("9")
+
+let id
 
 let dadosAtuais 
 let dadoAnterior 
@@ -15,7 +22,12 @@ setTimeout(()=>{
 },1000)
 
 function comparar() {
-
+    temp = "temperatura: " + (dadoAnterior.temperatura - dadosAtuais.temperatura)
+    battery = "bateria: " + (dadoAnterior.bateria - dadosAtuais.bateria)
+    press = "pressao: " + (dadoAnterior.pressao- dadosAtuais.pressao)
+    alt = "altitude: "+(dadoAnterior.altitude - dadosAtuais.altitude)
+    voc  = "VOC: "+(dadoAnterior.voc - dadosAtuais.voc)
+    co2 = "co2: "+(dadoAnterior.co2 - dadosAtuais.co2)
 }
 function getData() {
     fetch(`https://api-project-smoky.vercel.app/getInfo/`).then((response => response.json())).then( data =>{
