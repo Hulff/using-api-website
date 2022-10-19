@@ -22,12 +22,12 @@ setTimeout(()=>{
 },1000)
 
 function comparar() {
-    temp = "temperatura: " + (dadoAnterior.temperatura - dadosAtuais.temperatura)
-    battery = "bateria: " + (dadoAnterior.bateria - dadosAtuais.bateria)
-    press = "pressao: " + (dadoAnterior.pressao- dadosAtuais.pressao)
-    alt = "altitude: "+(dadoAnterior.altitude - dadosAtuais.altitude)
-    voc  = "VOC: "+(dadoAnterior.voc - dadosAtuais.voc)
-    co2 = "co2: "+(dadoAnterior.co2 - dadosAtuais.co2)
+    temp.innerHTML = `temperatura: ${(dadoAnterior.temperatura - dadosAtuais.temperatura)}`
+    battery.innerHTML = `bateria: ${(dadoAnterior.bateria - dadosAtuais.bateria)}`
+    press.innerHTML = `pressao: ${(dadoAnterior.pressao- dadosAtuais.pressao)}`
+    alt.innerHTML = `altitude: ${(dadoAnterior.altitude - dadosAtuais.altitude)}`
+    voc.innerHTML  = `VOC: ${(dadoAnterior.voc - dadosAtuais.voc)}`
+    co2.innerHTML = `co2: ${(dadoAnterior.co2 - dadosAtuais.co2)}`
 }
 function getData() {
     fetch(`https://api-project-smoky.vercel.app/getInfo/`).then((response => response.json())).then( data =>{
@@ -58,6 +58,8 @@ function search () {
 } else {
     dadoAnterior = dadosAtuais
         getData()
-        comparar()
+        setTimeout(()=>{
+            comparar()
+        },1500)
     }
 }
