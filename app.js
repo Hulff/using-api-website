@@ -1,3 +1,4 @@
+
 const ulRelatorioHtml = document.getElementById("ulRelatorio")
 const temperaturaHtml = document.getElementById("1")
 const pressaoHtml = document.getElementById("2")
