@@ -3,14 +3,21 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
+        <aside>
+            <button class="btn-info">Instruções de uso</button>
+            <p>
+                
+            </p>
+        </aside>
+        <div class="div3">
         <div class="div1">
-        <h1>Ultimos Dados</h1>
+        <h1>Últimos Dados</h1>
         <div>
 
         <ul>
             <li>
                 <div id="1">
-                    Inicie uma Busca!
+                    Inicie uma Busca! 👇👇👇
                 </div>
             </li>
             <li>
@@ -29,16 +36,16 @@
                 <div id="12"></div>
             </li>
         </ul>
-        <input type="number" id="input" placeholder="indentificador do sensor">
-        <button onclick="startLoop()">Iniciar Busca</button>
-        <button onclick="stopSearch()">Parar</button>
+        <input onmouseenter="enterListener()"  type="number" id="input" placeholder="Código do sensor aqui!">
+        <button class="btn-start" onclick="startLoop()">Iniciar Busca</button>
+        <button class="btn-stop" onclick="stopSearch()">Parar</button>
     </div>
     </div>
     <div class="div2">
         <h2>Relatório</h2>
         <ul id="ulRelatorio">
             <li>
-                <div id="4"></div>
+                <div id="4">Esperando novos dados :/</div>
             </li>
             <li>
                 <div id="5"></div>
@@ -57,6 +64,7 @@
             </li>
         </ul>
     </div>
+  </div>
         <script src="./app.js"></script>
     </body>
 </html>

@@ -4,16 +4,37 @@ body,button,ul,li,div{
     margin: 0px;
     padding: 0px;
 }
-h1 {    
+body {
+    background-image: url(https://lh3.googleusercontent.com/pw/AL9nZEUeAChmu7EUJ2QpQQNS-zKfXD_ByzewkkwvQP3vDQYIzz6pcGK5IQRPXl9VY6OuVlC48fJ--sJCf3VVGQ5hGONZ-WNMejnP_qPNfKzFnMS8ily3Hm0HTRJmUZ1pnW2x9vjSOtv7yF2EqnvHkGZ08wMs=w938-h625-no?authuser=0);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    background-attachment: fixed;
+}
+aside {
+    width: 15%;
+}
+.div3 {
+    width: 70%;
+
+}
+h1 {      
+    color: white; 
+    margin: 0px;
     font-size: 58px;
     text-align: center;
+    margin-top: 6vh;
 }
 h2 {
+    color: white;
+    margin: 0px;
     font-size: 48px;
-    margin-left: 35px;
+    text-align: center;
+    margin-top: 6vh;
+
 }
 .div1 > div > ul {
-    background: #efeeee;
+    background: #07241485;
     border-radius: 24px;
     padding: 34px;
     margin-bottom: 16px;
@@ -24,20 +45,32 @@ li>div {
     margin: 11px;
     padding: 3px 17px;
     background: white;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 input, button {
     border-radius: 9px;
-    padding: 6px;
+    padding: 10px 19px;
     font-size: 19px;
 }
 button {
+    color: white;
     font-weight: 700;
     margin: 0px 7px;
     padding: 11px;
     border: none;
 }
+.btn-start {
+    background: #08d978;
+}
+.btn-stop {
+    background: #ff0000ab;
+}
+.btn-info {
+    margin-top: 3vh;
+    background: no-repeat;
+}
+
 .div1 {
     display: flex;
     flex-direction: column;
@@ -51,7 +84,7 @@ button {
 
 }
 .div2 > ul {
-    background: #efeeee;
+    background: #07241485;
     border-radius: 24px;
     padding: 34px;
     margin-bottom: 16px;

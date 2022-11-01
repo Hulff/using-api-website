@@ -11,8 +11,8 @@ const tempHtml = document.getElementById("4")
 const pressHtml= document.getElementById("5") 
 const batteryHtml= document.getElementById("6")
 const altHtml = document.getElementById("7")
-const vocHtml = document.getElementById("8")
-const co2Html = document.getElementById("9")
+const vocHtml = document.getElementById("9")
+const co2Html = document.getElementById("8")
 const timeout = setTimeout(search, 6000)
 clearTimeout(timeout)
 let id
@@ -22,44 +22,43 @@ let dadoAnterior
 
 
 function comparar() {
-        ulRelatorioHtml.style.backgroundColor = "#efeeee"
         let tempDif = dadosAtuais.temperatura - dadoAnterior.temperatura 
     
         if(dadoAnterior.temperatura < dadosAtuais.temperatura) {
-            tempHtml.innerHTML = "temperatura: +"+ tempDif
+            tempHtml.innerHTML = "Temperatura: +"+ tempDif.toFixed(3)+" °C"
         } else {
-            tempHtml.innerHTML = "temperatura: "+ tempDif
+            tempHtml.innerHTML = "Temperatura: "+ tempDif.toFixed(3)+" °C"
         }
         let batteryDif = dadosAtuais.bateria - dadoAnterior.bateria
         if(dadoAnterior.bateria < dadosAtuais.bateria) {
-            batteryHtml.innerHTML = "bateria: +"+ batteryDif
+            batteryHtml.innerHTML = "Bateria: +"+ batteryDif.toFixed(3)+"%"
         } else {
-            batteryHtml.innerHTML = "temperatura: "+ batteryDif
+            batteryHtml.innerHTML = "Bateria: "+ batteryDif.toFixed(3)+"%"
         }
     
         let pressDif = dadosAtuais.pressao  - dadoAnterior.pressao 
         if(dadoAnterior.pressao < dadosAtuais.pressao) {
-            pressHtml.innerHTML = "pressao: +"+pressDif
+            pressHtml.innerHTML = "Pressao: +"+pressDif.toFixed(3)+" Kpa"
         } else {
-            pressHtml.innerHTML = "pressao: "+pressDif
+            pressHtml.innerHTML = "Pressao: "+pressDif.toFixed(3)+" Kpa"
         }
         let altDif =  dadosAtuais.altitude-dadoAnterior.altitude
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
-            altHtml.innerHTML = "altitude: +"+altDif
+            altHtml.innerHTML = "Altitude: +"+altDif.toFixed(3)+" m"
         } else {
-            altHtml.innerHTML = "altitude: "+altDif
+            altHtml.innerHTML = "Altitude: "+altDif.toFixed(3)+" m"
         }
         let vocDif = dadosAtuais.voc-dadoAnterior.voc
         if(dadoAnterior.altitude < dadosAtuais.altitude) {
-            vocHtml.innerHTML = "VOC: +"+vocDif
+            vocHtml.innerHTML = "VOC: +"+vocDif.toFixed(3)+" ppm"
         } else {
-            vocHtml.innerHTML = "VOC: "+vocDif
+            vocHtml.innerHTML = "VOC: "+vocDif.toFixed(3)+" ppm"
         }
         let co2Dif = dadosAtuais.co2-dadoAnterior.co2
         if(dadoAnterior.co2 < dadosAtuais.co2) {
-            co2Html.innerHTML = "Co2: +"+co2Dif
+            co2Html.innerHTML = "CO2: +"+co2Dif.toFixed(3)+" ppm"
         } else {
-            co2Html.innerHTML = "Co2: "+co2Dif
+            co2Html.innerHTML = "CO2: "+co2Dif.toFixed(3)+" ppm"
         }
 }
 function search() {
@@ -89,20 +88,20 @@ function getData() {
         fetch(link).then((response => response.json())).then( data =>{
         
 
-    payloadAltitudeHtml.innerHTML = "altitude = " +data[0].payload.altitude;
-    payloadCo2Html.innerHTML = "CO2 = " +data[0].payload.co2;
-    payloadVocHtml.innerHTML = "VOC's = " +data[0].payload.voc;
-    temperaturaHtml.innerHTML= "temperatura = "+data[0].temperatura;
-    pressaoHtml.innerHTML= "pressao = "+data[0].pressao;
-    bateriaHtml.innerHTML= "bateria = "+data[0].bateria;
+    payloadAltitudeHtml.innerHTML = "Altitude = " +data[0].payload.altitude.toFixed(3)+" m"
+    payloadCo2Html.innerHTML = "CO2 = " + data[0].payload.co2.toFixed(3)+" ppm"
+    payloadVocHtml.innerHTML = "VOC's = " +data[0].payload.voc.toFixed(3)+" ppm"
+    temperaturaHtml.innerHTML= "Temperatura = "+data[0].temperatura.toFixed(3)+" °C"
+    pressaoHtml.innerHTML= "Pressao = "+(data[0].pressao/1000).toFixed(3)+" Kpa"
+    bateriaHtml.innerHTML= "Bateria= "+((data[0].bateria/2400)*100).toFixed(2)+"%"
     id = data[0]._id
     dadosAtuais = {
-        temperatura:data[0].temperatura,
-        pressao:data[0].pressao,
-        voc:data[0].payload.voc,
-        co2:data[0].payload.co2,
-        altitude:data[0].payload.altitude,
-        bateria:data[0].bateria
+        temperatura:data[0].temperatura.toFixed(3),
+        pressao:(data[0].pressao/1000).toFixed(3),
+        voc:data[0].payload.voc.toFixed(3),
+        co2:data[0].payload.co2.toFixed(3),
+        altitude:data[0].payload.altitude.toFixed(3),
+        bateria:((data[0].bateria/2400)*100)
     }
     console.log(dadosAtuais)
     if(dadoAnterior != undefined) {
@@ -119,5 +118,12 @@ function getData() {
     })
  }
 }
-      
+
+function enterListener() {
+    window.addEventListener("keydown", (event) => {
+        if(event.keyCode == 13) {
+            startLoop()
+        }
+    })
+}
       
