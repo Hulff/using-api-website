@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+body,button,ul,li,div{
+    font-family: Roboto;
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+
+}
+body {
+    background-image: url(https://lh3.googleusercontent.com/pw/AL9nZEUeAChmu7EUJ2QpQQNS-zKfXD_ByzewkkwvQP3vDQYIzz6pcGK5IQRPXl9VY6OuVlC48fJ--sJCf3VVGQ5hGONZ-WNMejnP_qPNfKzFnMS8ily3Hm0HTRJmUZ1pnW2x9vjSOtv7yF2EqnvHkGZ08wMs=w938-h625-no?authuser=0);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background-attachment: fixed;
+    align-items: center;
+}
+.logo {
+    width: 14%;
+    margin-top: 6vh;
+}
+h1 {      
+    color: white;
+    margin: 0px;
+    font-size: 55px;
+    margin-top: 6vh;
+}
+h2 {      
+    color: black;
+    margin-top: 4%;
+    font-size: 30px;
+    text-align: center;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+body > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+li{
+    margin: 7vh 0px 12.5px 0px;
+}
+button {
+    font-weight: 500;
+    color: white;
+    padding: 6px 32px;
+    border-style: none;
+    background-color: #22222265;
+    font-size: 2.6vh;
+}
+button:hover {
+    background-color: rgba(0, 0, 0, 0.482);
+} 
+.btn-guide {
+    border-radius: 0px 8px 8px 0px;
+}
+.btn-home {
+    border-radius: 8px 0px 0px 8px;
+}
+.div-home,.div-guide,.div-about {
+    border-radius: 8% 8% 0% 0px;
+    width: 65%;
+    display: initial;
+    background: #e5f5e9;
+    height: -webkit-fill-available;
+}

@@ -63,8 +63,14 @@ button {
 .btn-start {
     background: #08d978;
 }
+.btn-start:hover {
+    background: #00f080;
+}
 .btn-stop {
-    background: #ff0000ab;
+    background: #ff0000ba;
+}
+.btn-stop:hover {
+    background: #ff0000db;
 }
 .btn-info {
     margin-top: 3vh;
@@ -90,4 +96,8 @@ button {
     margin-bottom: 16px;
     list-style: none;
 
+}
+.logo {
+    width: 14%;
+    margin-top: 6vh;
 }
