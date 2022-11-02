@@ -96,6 +96,16 @@ p {
     border-radius: 100%;
     width: 18%;
 }
-.div-card > p {
-    font-size:122%;
+.div-card > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 } 
+.div-card > div > p {
+    font-size:122%;
+}
+.div-card > div > h3 {
+    margin: 0px;
+    font-size: 33px;
+    color: black;
+}  
