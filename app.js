@@ -16,12 +16,44 @@ const co2Html = document.getElementById("8")
 const timeout = setTimeout(search, 6000)
 clearTimeout(timeout)
 let id
+let x
 
 let dadosAtuais 
 let dadoAnterior 
 
+function visibilidade(type) {
+    if(type == 0) {
+        pressaoHtml.classList.add("transparent")
+        bateriaHtml.classList.add("transparent")
+        payloadAltitudeHtml.classList.add("transparent")
+        payloadCo2Html.classList.add("transparent")
+        payloadVocHtml.classList.add("transparent")
+    } else if (type == 1) {
+        pressaoHtml.classList.remove("transparent")
+        bateriaHtml.classList.remove("transparent")
+        payloadAltitudeHtml.classList.remove("transparent")
+        payloadCo2Html.classList.remove("transparent")
+        payloadVocHtml.classList.remove("transparent")
+    } else if (type == 2) {
+        pressHtml.classList.remove("transparent")
+        batteryHtml.classList.remove("transparent")
+        altHtml.classList.remove("transparent")
+        co2Html.classList.remove("transparent")
+        vocHtml.classList.remove("transparent")
+    } else if (type == 3) {
+        pressHtml.classList.add("transparent")
+        batteryHtml.classList.add("transparent")
+        altHtml.classList.add("transparent")
+        co2Html.classList.add("transparent")
+        vocHtml.classList.add("transparent")
+    }
+}
+visibilidade(0)
+visibilidade(3)
+
 
 function comparar() {
+
         let tempDif = dadosAtuais.temperatura - dadoAnterior.temperatura 
     
         if(dadoAnterior.temperatura < dadosAtuais.temperatura) {
@@ -60,6 +92,11 @@ function comparar() {
         } else {
             co2Html.innerHTML = "CO2: "+co2Dif.toFixed(3)+" ppm"
         }
+        
+        if (x = undefined) {
+            setTimeout(visibilidade(2),400)
+            x=1
+        }
 }
 function search() {
     getData()
@@ -94,6 +131,9 @@ function getData() {
     temperaturaHtml.innerHTML= "Temperatura = "+data[0].temperatura.toFixed(3)+" °C"
     pressaoHtml.innerHTML= "Pressao = "+(data[0].pressao/1000).toFixed(3)+" Kpa"
     bateriaHtml.innerHTML= "Bateria= "+((data[0].bateria/2400)*100).toFixed(2)+"%"
+    if(id==undefined) {
+        setTimeout(visibilidade(1),400)
+    }
     id = data[0]._id
     dadosAtuais = {
         temperatura:data[0].temperatura.toFixed(3),

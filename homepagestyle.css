@@ -45,19 +45,25 @@ body > div {
 li{
     margin: 7vh 0px 12.5px 0px;
 }
-button {
+button,a {
     font-weight: 500;
     color: white;
     padding: 6px 32px;
     border-style: none;
     background-color: #22222265;
     font-size: 2.6vh;
+    text-decoration: none;
+    margin: 0.5px;
 }
-button:hover {
+button:hover,a:hover {
+    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.482);
 } 
-.btn-guide {
+.link1 {
     border-radius: 0px 8px 8px 0px;
+}
+.link1:visited {
+    text-decoration: underline;
 }
 .btn-home {
     border-radius: 8px 0px 0px 8px;
@@ -67,5 +73,11 @@ button:hover {
     width: 65%;
     display: initial;
     background: #e5f5e9;
-    height: -webkit-fill-available;
+    padding: 0px 26px;
+}
+p {
+    font-size: 4vh;
+    color: black;
+    text-align: justify;
+    padding: 0px 28px;
 }
