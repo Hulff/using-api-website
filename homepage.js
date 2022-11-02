@@ -16,9 +16,4 @@ function selectSection(sectionId) {
         divHome.style.display = "none"
         divGuide.style.display = "none"
     }
-    if (sectionId == 3) {
-        divGuide.style.display = "initial"
-        divAbout.style.display = "none"
-        divHome.style.display = "none"
-    }
 }

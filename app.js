@@ -22,22 +22,66 @@ let x
 let dadosAtuais 
 let dadoAnterior 
 
-function showGuide() {
-    btnInfo.innerHTML = ""
-    btnInfo.style.width ="30vh"
-    btnInfo.style.height ="36vh"
-    btnInfo.addEventListener('transitionend', () => {
-        btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação e clique em 'Iniciar Busca' para visualizar seus dados"
+
+console.log(screen.width)
+console.log(screen.height)
+
+if (screen.width <768) {
+    btnInfo.addEventListener('mouseenter', () => {
+        showGuide(2)
       });
+      btnInfo.addEventListener('mouseleave', () => {
+        closeGuide(2)
+      });
+    btnInfo.style.width ="9vh"
+    btnInfo.style.height ="6vh"
+
+} else {
+    btnInfo.addEventListener('mouseenter', () => {
+        showGuide(1)
+    });
+    btnInfo.addEventListener('mouseleave', () => {
+        closeGuide(1)
+    });
+}
+
+function showGuide(mode) {
+    if(mode == 1) {
+        btnInfo.innerHTML = ""
+        btnInfo.style.width ="30vh"
+        btnInfo.style.height ="36vh"
+        btnInfo.addEventListener('transitionend', () => {
+            btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação e clique em 'Iniciar Busca' para visualizar seus dados"
+          });
+        } 
+        if(mode == 2) {
+            btnInfo.innerHTML = ""
+            btnInfo.style.width ="12vh"
+            btnInfo.style.height ="20vh"
+            btnInfo.addEventListener('transitionend', () => {
+                btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação e clique em 'Iniciar Busca' para visualizar seus dados"
+              });
+            } 
+   
 
 }
-function closeGuide() {
+function closeGuide(mode) {
+    if(mode == 1) {
     btnInfo.innerHTML = ""
     btnInfo.style.width ="26vh"
     btnInfo.style.height ="12vh"
     btnInfo.addEventListener('transitionend', () => {
         btnInfo.innerHTML = "Guia de Uso"
       });
+    } 
+    if(mode == 2) {
+        btnInfo.innerHTML = ""
+        btnInfo.style.width ="9vh"
+        btnInfo.style.height ="5vh"
+        btnInfo.addEventListener('transitionend', () => {
+            btnInfo.innerHTML = "Guia de Uso"
+          });
+        } 
 }
 function visibilidade(type) {
     if(type == 0) {

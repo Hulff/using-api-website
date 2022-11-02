@@ -94,7 +94,7 @@ button {
     padding: 4% 8%;
     background: #07241485;
     margin-top: 3vh;
-    transition: height 0.6s, width 0.5s;
+    transition: height 0.3s, width 0.3s;
     height: 10vh;
     width: 20vh;
 }
