@@ -13,6 +13,7 @@ const batteryHtml= document.getElementById("6")
 const altHtml = document.getElementById("7")
 const vocHtml = document.getElementById("9")
 const co2Html = document.getElementById("8")
+const btnInfo = document.getElementById("btn-info")
 const timeout = setTimeout(search, 6000)
 clearTimeout(timeout)
 let id
@@ -21,6 +22,23 @@ let x
 let dadosAtuais 
 let dadoAnterior 
 
+function showGuide() {
+    btnInfo.innerHTML = ""
+    btnInfo.style.width ="30vh"
+    btnInfo.style.height ="36vh"
+    btnInfo.addEventListener('transitionend', () => {
+        btnInfo.innerHTML = "preencha o campo em branco com o codigo de indentificação e clique em 'Iniciar Busca' para visualizar seus dados"
+      });
+
+}
+function closeGuide() {
+    btnInfo.innerHTML = ""
+    btnInfo.style.width ="26vh"
+    btnInfo.style.height ="12vh"
+    btnInfo.addEventListener('transitionend', () => {
+        btnInfo.innerHTML = "Guia de Uso"
+      });
+}
 function visibilidade(type) {
     if(type == 0) {
         pressaoHtml.classList.add("transparent")

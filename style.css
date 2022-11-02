@@ -12,20 +12,21 @@ body {
     background-attachment: fixed;
 }
 aside {
-    width: 15%;
+    width: 22%;
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
 }
 .aside-back {
-    width:22%;
+    width:15%;
 } 
 .div3 {
     width: 70%;
 
 }
 .div4 {
+    margin-left: 10%;
     display: flex;
     align-items: flex-start;
     flex-direction: row;
@@ -90,19 +91,21 @@ button {
     background: #ff0000db;
 }
 .btn-info {
+    padding: 4% 8%;
+    background: #07241485;
     margin-top: 3vh;
-    background: no-repeat;
+    transition: height 0.6s, width 0.5s;
+    height: 10vh;
+    width: 20vh;
 }
 
 .div1 {    
-    margin-right: 16%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
 .div2 {
-    margin-right: 16%;
     display: flex;
     flex-direction: column;
     align-items: center;
