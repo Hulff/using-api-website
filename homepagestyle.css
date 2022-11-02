@@ -71,7 +71,7 @@ button:hover,a:hover {
     border-radius: 8px 0px 0px 8px;
 }
 .div-home,.div-guide,.div-about {
-    border-radius: 8% 8% 0% 0px;
+    border-radius: 8% 8% 8% 8%;
     width: 65%;
     display: initial;
     background: #ffffff;
@@ -85,3 +85,17 @@ p {
     text-align: justify;
     padding: 0px 28px;
 }
+.div-card {
+    display: flex;
+    padding: 0px 28px;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 3vh;
+}
+.div-card > img {
+    border-radius: 100%;
+    width: 18%;
+}
+.div-card > p {
+    font-size:122%;
+} 
