@@ -2,7 +2,6 @@ const divHome = document.getElementById("div-home")
 const divAbout = document.getElementById("div-about")
 const divGuide = document.getElementById("div-guide")
 
-
 setTimeout( selectSection(1) , 500)
 
 function selectSection(sectionId) {

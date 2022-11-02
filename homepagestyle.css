@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
-body,button,ul,li,div{
+body,button,ul,li,div,button,a{
     font-family: Roboto;
     margin: 0px;
     padding: 0px;
@@ -43,7 +43,9 @@ body > div {
     color:white;
 }
 li{
-    margin: 7vh 0px 12.5px 0px;
+    display: flex;
+    margin: 5vh 0px 12.5px 0px;
+    align-items: center;
 }
 button,a {
     font-weight: 500;
@@ -51,7 +53,7 @@ button,a {
     padding: 6px 32px;
     border-style: none;
     background-color: #22222265;
-    font-size: 2.6vh;
+    font-size: 2.1vh;
     text-decoration: none;
     margin: 0.5px;
 }
@@ -72,11 +74,13 @@ button:hover,a:hover {
     border-radius: 8% 8% 0% 0px;
     width: 65%;
     display: initial;
-    background: #e5f5e9;
+    background: #ffffff;
     padding: 0px 26px;
+    margin-top: 1vh;
 }
+
 p {
-    font-size: 4vh;
+    font-size: 200%;
     color: black;
     text-align: justify;
     padding: 0px 28px;
