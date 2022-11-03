@@ -154,10 +154,7 @@ function comparar() {
             co2Html.innerHTML = "CO2: "+co2Dif.toFixed(3)+" ppm"
         }
         
-        if (x = undefined) {
             setTimeout(visibilidade(2),400)
-            x=1
-        }
 }
 function search() {
     getData()
